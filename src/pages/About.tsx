@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
-import { Award, Target, Eye, Users, CheckCircle2, Shield, Lock, Briefcase, FileCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Award, Target, Eye, Users, CheckCircle2, Shield, Lock, FileCheck, Briefcase, ArrowRight } from "lucide-react";
 
 const achievements = [
   "Supported DPDPA and GDPR readiness programs",
@@ -20,22 +22,19 @@ const certifications = [
 const About = () => {
   return (
     <Layout>
-      {/* Hero */}
       <section className="gradient-hero pt-32 pb-20">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-              About SHIVERA INFOTECH
-            </h1>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">About SHIVERA INFOTECH</h1>
             <p className="text-lg text-white/90 leading-relaxed">
-              Founded in 2022, SHIVERA INFOTECH LLP was established to address the growing need for reliable IT, data privacy, and compliance solutions in an increasingly regulated digital landscape.
+              Founded in 2022, addressing the growing need for reliable IT, data privacy, and compliance solutions.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Overview */}
-      <section className="section-padding bg-background">
+      {/* Company Story */}
+      <section id="story" className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -44,7 +43,7 @@ const About = () => {
                 SHIVERA INFOTECH LLP was founded to address the growing need for reliable IT, data privacy, and compliance solutions in an increasingly regulated digital landscape.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                We are led by professionals with deep expertise across IT services, data privacy, cybersecurity, regulatory compliance, and quality systems. Our focus is on building long-term partnerships built on trust, transparency, and delivery excellence.
+                We are led by professionals with deep expertise across IT services, data privacy, cybersecurity, regulatory compliance, and quality systems.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -64,7 +63,7 @@ const About = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section className="section-padding bg-muted">
+      <section id="vision" className="section-padding bg-muted">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
@@ -90,23 +89,18 @@ const About = () => {
       </section>
 
       {/* Leadership */}
-      <section className="section-padding bg-background">
+      <section id="leadership" className="section-padding bg-background">
         <div className="container-custom">
-          <SectionHeading
-            title="Leadership"
-            subtitle="SHIVERA INFOTECH LLP is led by professionals with deep expertise across IT services, data privacy, cybersecurity, regulatory compliance, and quality systems."
-          />
+          <SectionHeading title="Leadership" subtitle="Deep expertise across IT, privacy, cybersecurity, and compliance." />
           <div className="max-w-3xl mx-auto bg-card p-8 rounded-2xl shadow-card border border-border">
             <div className="flex items-start gap-6">
               <div className="w-20 h-20 rounded-full bg-teal/10 flex items-center justify-center flex-shrink-0">
                 <Briefcase className="w-10 h-10 text-teal" />
               </div>
               <div>
-                <h3 className="font-display font-bold text-xl text-foreground mb-2">
-                  Industry-Led Expertise
-                </h3>
+                <h3 className="font-display font-bold text-xl text-foreground mb-2">Industry-Led Expertise</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our leadership team brings decades of combined experience in IT consulting, regulatory compliance, and quality management. We believe in building long-term partnerships founded on trust, transparency, and delivery excellence.
+                  Our leadership team brings decades of combined experience in IT consulting, regulatory compliance, and quality management. We believe in long-term partnerships founded on trust, transparency, and delivery excellence.
                 </p>
               </div>
             </div>
@@ -117,40 +111,25 @@ const About = () => {
       {/* Achievements */}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container-custom">
-          <SectionHeading
-            title="Our Achievements"
-            subtitle="Milestones that define our journey of excellence."
-            light
-          />
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-4">
-              {achievements.map((achievement, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10"
-                >
-                  <CheckCircle2 className="w-6 h-6 text-teal-light flex-shrink-0" />
-                  <span className="text-primary-foreground">{achievement}</span>
-                </div>
-              ))}
-            </div>
+          <SectionHeading title="Our Achievements" light />
+          <div className="max-w-3xl mx-auto space-y-4">
+            {achievements.map((a, i) => (
+              <div key={i} className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                <CheckCircle2 className="w-6 h-6 text-teal flex-shrink-0" />
+                <span>{a}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Certifications */}
-      <section className="section-padding bg-background">
+      <section id="certifications" className="section-padding bg-background">
         <div className="container-custom">
-          <SectionHeading
-            title="Certifications & Credentials"
-            subtitle="Our team holds industry-recognized certifications and credentials."
-          />
+          <SectionHeading title="Certifications & Credentials" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {certifications.map((cert) => (
-              <div
-                key={cert.name}
-                className="bg-card p-6 rounded-2xl shadow-card border border-border text-center hover:border-teal/30 transition-colors"
-              >
+              <div key={cert.name} className="bg-card p-6 rounded-2xl shadow-card border border-border text-center hover:border-teal/30 transition-colors">
                 <div className="w-16 h-16 rounded-full bg-teal/10 flex items-center justify-center mx-auto mb-4">
                   <cert.icon className="w-8 h-8 text-teal" />
                 </div>

@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
+    --background: 0 0% 100%;
     --foreground: 220 30% 15%;
 
     --card: 0 0% 100%;
@@ -18,13 +18,13 @@
     --primary: 215 65% 20%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 180 45% 35%;
+    --secondary: 155 66% 49%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 15% 95%;
+    --muted: 210 15% 96%;
     --muted-foreground: 220 15% 45%;
 
-    --accent: 180 45% 35%;
+    --accent: 155 66% 49%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -32,22 +32,23 @@
 
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 215 65% 20%;
+    --ring: 155 66% 49%;
 
     --radius: 0.5rem;
 
-    /* Custom brand tokens */
+    /* Brand tokens */
     --navy: 215 65% 20%;
     --navy-light: 215 50% 30%;
-    --teal: 180 45% 35%;
-    --teal-light: 180 40% 45%;
-    --teal-pale: 180 30% 95%;
+    --teal: 155 66% 49%;
+    --teal-light: 155 58% 56%;
+    --teal-pale: 155 40% 96%;
+    --teal-dark: 155 70% 38%;
     --slate: 220 15% 45%;
     --slate-light: 220 15% 70%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(215 65% 20%) 0%, hsl(215 50% 30%) 50%, hsl(180 45% 35%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(180 45% 35%) 0%, hsl(180 40% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 65% 18%) 0%, hsl(215 50% 28%) 50%, hsl(155 66% 35%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(155 66% 49%) 0%, hsl(155 58% 56%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
 
     /* Shadows */
@@ -62,31 +63,23 @@
   .dark {
     --background: 220 30% 10%;
     --foreground: 210 20% 98%;
-
     --card: 220 25% 15%;
     --card-foreground: 210 20% 98%;
-
     --popover: 220 25% 15%;
     --popover-foreground: 210 20% 98%;
-
-    --primary: 180 45% 45%;
+    --primary: 155 66% 49%;
     --primary-foreground: 220 30% 10%;
-
     --secondary: 215 50% 30%;
     --secondary-foreground: 210 20% 98%;
-
     --muted: 220 20% 20%;
     --muted-foreground: 210 15% 65%;
-
-    --accent: 180 45% 45%;
+    --accent: 155 66% 49%;
     --accent-foreground: 220 30% 10%;
-
     --destructive: 0 62% 30%;
     --destructive-foreground: 210 20% 98%;
-
     --border: 220 20% 25%;
     --input: 220 20% 25%;
-    --ring: 180 45% 45%;
+    --ring: 155 66% 49%;
   }
 }
 
@@ -137,7 +130,7 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-hero);
+    background-image: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--teal)) 100%);
   }
 
   .trust-badge {
@@ -159,33 +152,17 @@
   }
 
   @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
   }
 }
